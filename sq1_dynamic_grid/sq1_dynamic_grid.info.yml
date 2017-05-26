@@ -1,0 +1,7 @@
+name: SQ1 Dynamic Grid
+type: module
+description: 'Render a dynamic of thumbnails.'
+package: SQ1
+core: '8.x'
+dependencies:
+  - views

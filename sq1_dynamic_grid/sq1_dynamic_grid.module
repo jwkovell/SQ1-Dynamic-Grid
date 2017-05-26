@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\node\Entity\Node;
+
+function template_preprocess_views_view_sq1_dynamic_grid(&$variables) {
+
+  // Add options to the variables array.
+  $variables['options'] = $variables['view']->style_plugin->options;
+
+  /* kint($variables['options']);
+  exit; */
+
+  $items = [];
+
+  // Iterate over each rendered views result row.
+  foreach ($variables['rows'] as $index => $item) {
+
+    // Add item to item content.
+    $items[]['content'] = $item;
+
+  }
+
+  // Add items to the variables array.
+  $variables['items'] = $items;
+
+}

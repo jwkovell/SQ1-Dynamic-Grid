@@ -1,0 +1,10 @@
+sq1_dynamic_grid.base:
+  version: VERSION
+  css:
+    component:
+      css/dynamic-grid.css: {}
+  js:
+    js/dynamic-grid.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

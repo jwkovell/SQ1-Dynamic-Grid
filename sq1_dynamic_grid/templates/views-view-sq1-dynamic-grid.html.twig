@@ -1,0 +1,77 @@
+{{ attach_library('sq1_dynamic_grid/sq1_dynamic_grid.base') }}
+
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
+<div
+  class="sq1-dynamic-grid"
+  data-default-column-count="{{ options.default_column_count|default(4) }}"
+  data-six-column-active="{{ options.responsive[6].active }}"
+  data-six-column-min="{{ options.responsive[6].min }}"
+  data-six-column-max="{{ options.responsive[6].max }}"
+  data-five-column-active="{{ options.responsive[5].active }}"
+  data-five-column-min="{{ options.responsive[5].min }}"
+  data-five-column-max="{{ options.responsive[5].max }}"
+  data-four-column-active="{{ options.responsive[4].active }}"
+  data-four-column-min="{{ options.responsive[4].min }}"
+  data-four-column-max="{{ options.responsive[4].max }}"
+  data-three-column-active="{{ options.responsive[3].active }}"
+  data-three-column-min="{{ options.responsive[3].min }}"
+  data-three-column-max="{{ options.responsive[3].max }}"
+  data-two-column-active="{{ options.responsive[2].active }}"
+  data-two-column-min="{{ options.responsive[2].min }}"
+  data-two-column-max="{{ options.responsive[2].max }}"
+  data-one-column-active="{{ options.responsive[1].active }}"
+  data-one-column-min="{{ options.responsive[1].min }}"
+  data-one-column-max="{{ options.responsive[1].max }}"
+>
+  {# The queue holds tiles before they are sorted into their columns #}
+  <ul class="sq1-dynamic-grid-queue"></ul>
+  <div class="sq1-dynamic-grid-grid">
+    <ul class="sq1-dynamic-grid-column">
+      {% for item in items %}
+        {% if loop.index % 4 == 1 %}
+          <li data-index="{{ loop.index }}" class="sq1-dynamic-grid-tile">
+            <div class="sq1-dynamic-grid-content">
+              {{ item.content }}
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <ul class="sq1-dynamic-grid-column">
+      {% for item in items %}
+        {% if loop.index % 4 == 2 %}
+          <li data-index="{{ loop.index }}" class="sq1-dynamic-grid-tile">
+            <div class="sq1-dynamic-grid-content">
+              {{ item.content }}
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <ul class="sq1-dynamic-grid-column">
+      {% for item in items %}
+        {% if loop.index % 4 == 3 %}
+          <li data-index="{{ loop.index }}" class="sq1-dynamic-grid-tile">
+            <div class="sq1-dynamic-grid-content">
+              {{ item.content }}
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <ul class="sq1-dynamic-grid-column">
+      {% for item in items %}
+        {% if loop.index % 4 == 0 %}
+          <li data-index="{{ loop.index }}" class="sq1-dynamic-grid-tile">
+            <div class="sq1-dynamic-grid-content">
+              {{ item.content }}
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
