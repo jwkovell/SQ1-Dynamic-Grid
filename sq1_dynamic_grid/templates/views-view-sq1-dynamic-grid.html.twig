@@ -1,9 +1,5 @@
 {{ attach_library('sq1_dynamic_grid/sq1_dynamic_grid.base') }}
 
-{% if title %}
-  <h3>{{ title }}</h3>
-{% endif %}
-
 <div
   class="sq1-dynamic-grid"
   data-default-column-count="{{ options.default_column_count|default(4) }}"
